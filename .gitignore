@@ -1,0 +1,51 @@
+Assets/3rd Party/Photon/
+Assets/3rd Party/Photon.meta
+
+# ============================ #
+# Visual Studio Code generated #
+# ============================ #
+.vscode/
+
+# =============== #
+# Unity generated #
+# =============== #
+[Tt]emp/
+[Oo]bj/
+[Bb]in/
+[Bb]uilds/
+[Bb]uild/
+[Ll]ibrary/
+[Aa]pp/
+Assets/AssetStoreTools*
+UWP/
+WindowsStoreApp/
+UnityGenerated/
+UnityPackageManager/
+project.json
+project.lock.json
+WSATestCertificate.pfx
+WSATestCertificate.pfx.meta
+
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+.vs/
+ExportedObj/
+obj/
+*.svd
+*.userprefs
+/*.csproj
+*.csproj
+*.pidb
+*.suo
+/*.sln
+*.sln
+*.user
+*.unityproj
+*.ipch
+*.opensdf
+*.sdf
+*.tlog
+*.log
+*.idb
+*.opendb
