@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96eda8ceee78d2a41a2a4f2acd47dad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SerializationRate: 60
+  SerializationRate: 30
   HumanPoseSynchronizerPrefab: {fileID: 1069120790799584, guid: 9ce0e315818430148934f6825abafd16,
     type: 2}
   SynchronizerPosition: {x: 0, y: 0, z: 0}
