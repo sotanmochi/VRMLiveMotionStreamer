@@ -8,3 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/VRMLiveMotionStreamer/Scenes/VRMLiveMotionStreamer.unity
     guid: 5c37b5957c4263b498a48760e77fd98e
+  - enabled: 0
+    path: Assets/VRMLiveMotionStreamer/Scenes/VRMLiveMotionStreamerUsingMotionCapture.unity
+    guid: 19df5c4f907233242b9f6496df4f3536
