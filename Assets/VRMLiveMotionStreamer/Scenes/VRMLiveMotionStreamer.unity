@@ -357,7 +357,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2063799752}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35dee914e52d1da40a0bad0ad27309ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b42fd7e79e45374984929c23e275fb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   PhotonVoicePrefab: {fileID: 1743690156496770, guid: f8f24ebeed14fd642b7f0766400eccef,
@@ -413,7 +413,7 @@ MonoBehaviour:
   voiceDetection: 0
   voiceDetectionThreshold: 0.01
   voiceDetectionDelayMs: 500
-  unityMicrophoneDevice: "\u30DE\u30A4\u30AF (7- USB VoIP Device)"
+  unityMicrophoneDevice: "\u30DE\u30A4\u30AF (8- USB VoIP Device)"
   photonMicrophoneDeviceId: 0
   audioGroup: 0
   debugEchoMode: 0
