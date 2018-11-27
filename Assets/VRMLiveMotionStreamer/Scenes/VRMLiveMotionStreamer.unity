@@ -267,8 +267,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1468096725}
-  - component: {fileID: 1468096724}
   - component: {fileID: 1468096726}
+  - component: {fileID: 1468096727}
+  - component: {fileID: 1468096724}
   m_Layer: 0
   m_Name: LiveMotionStreamer
   m_TagString: Untagged
@@ -282,7 +283,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1468096723}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71e3f3b3d5dcd7f4da6a79c5a1a63fcf, type: 3}
   m_Name: 
@@ -318,6 +319,21 @@ MonoBehaviour:
   HumanPoseSynchronizerPrefab: {fileID: 1069120790799584, guid: 9ce0e315818430148934f6825abafd16,
     type: 2}
   SynchronizerPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &1468096727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1468096723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6368b8f14b0018647b0ec7219afaefa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RoomName: VRMLiveMotion2018
+  AutoConnect: 1
+  GameVersion: 1.0
+  MaxPlayers: 10
 --- !u!1 &2063799752
 GameObject:
   m_ObjectHideFlags: 0
