@@ -1,5 +1,9 @@
 # VRM Live Motion Streamer
 
+[Watch on Youtube](https://www.youtube.com/watch?v=328ZCtTw9UE)
+
+<img src="./Images/VRMLiveMotionDemo.png" width="50%">
+
 ## Tested Environment
 - Unity 2017.4.14f1
 - Windows 10
