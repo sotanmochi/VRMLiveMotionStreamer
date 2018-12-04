@@ -20,12 +20,16 @@ public class PhotonHumanPoseView : MonoBehaviour, IPunObservable
     private int m_SynchronizeMusclesCount;
 
     public bool m_LerpEnabled = true;
+    public bool m_FixedBodyPosition = false;
 
     private float m_LerpWeight;
     private HumanPose m_PreviousPose;
     private HumanPose m_CurrentPose;
 
-    public void Awake()
+    private Vector3 m_InitialBodyPosition;
+    private Quaternion m_InitialBodyRotation;
+
+    void Awake()
     {
         m_PhotonView = GetComponent<PhotonView>();
 
@@ -39,12 +43,24 @@ public class PhotonHumanPoseView : MonoBehaviour, IPunObservable
 
             m_PoseHandler.GetHumanPose(ref m_PreviousPose);
             m_PoseHandler.GetHumanPose(ref m_CurrentPose);
+
+            m_InitialBodyPosition = m_CurrentPose.bodyPosition;
+            m_InitialBodyRotation = m_CurrentPose.bodyRotation;
         }
     }
 
-    public void Update()
+    void Update()
     {
-        if (!this.m_PhotonView.IsMine)
+        if (m_PhotonView.IsMine)
+        {
+            if (m_PoseHandler != null)
+            {
+                m_PoseHandler.GetHumanPose(ref m_CurrentPose);
+                m_CurrentPose.bodyPosition = m_InitialBodyPosition;
+                m_PoseHandler.SetHumanPose(ref m_CurrentPose);
+            }
+        }
+        else
         {
             if (m_PoseHandler != null)
             {
@@ -54,7 +70,9 @@ public class PhotonHumanPoseView : MonoBehaviour, IPunObservable
                     float sr = PhotonNetwork.SerializationRate;
                     m_LerpWeight += (sr / fps);
 
-                    m_CurrentPose.bodyPosition = Vector3.Lerp(m_PreviousPose.bodyPosition, m_NextPose.bodyPosition, m_LerpWeight);
+                    Vector3 InterpolatedPosition = Vector3.Lerp(m_PreviousPose.bodyPosition, m_NextPose.bodyPosition, m_LerpWeight);
+                    m_CurrentPose.bodyPosition = (m_FixedBodyPosition) ? m_InitialBodyPosition : InterpolatedPosition;
+
                     m_CurrentPose.bodyRotation = Quaternion.Lerp(m_PreviousPose.bodyRotation, m_NextPose.bodyRotation, m_LerpWeight);
                     for (int i = 0; i < m_SynchronizeMusclesCount; i++)
                     {
@@ -65,6 +83,10 @@ public class PhotonHumanPoseView : MonoBehaviour, IPunObservable
                 }
                 else
                 {
+                    if (m_FixedBodyPosition)
+                    {
+                        m_NextPose.bodyPosition = m_InitialBodyPosition;
+                    }
                     m_PoseHandler.SetHumanPose(ref m_NextPose);
                 }
             }
